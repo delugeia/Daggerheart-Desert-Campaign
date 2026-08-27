@@ -41,7 +41,22 @@ foreach ($documents as $key => $file) {
     $titles[$key] = documentTitle($file);
 }
 
-uasort($titles, static fn (string $a, string $b): int => strnatcasecmp($a, $b));
+$titles['README'] = 'Table of Contents';
+
+uksort($titles, static function (string $a, string $b) use ($titles): int {
+    $group = static function (string $key): int {
+        if ($key === 'README') {
+            return 0;
+        }
+
+        return str_starts_with(strtolower($key), 'appendix') ? 2 : 1;
+    };
+
+    $groupComparison = $group($a) <=> $group($b);
+    return $groupComparison !== 0
+        ? $groupComparison
+        : strnatcasecmp($titles[$a], $titles[$b]);
+});
 
 $environment = new Environment([
     'html_input' => 'strip',
