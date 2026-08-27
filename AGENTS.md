@@ -28,7 +28,7 @@ Do **not** read or digest the entire encyclopedia at the start of a conversation
 
 Instead:
 
-- Begin with `TableOfContents.md` when you need to locate campaign information.
+- Begin with `encyclopedia/README.md` when you need to locate campaign information.
 - Open only the topic files relevant to the current task.
 - Use `AppendixNames.md` for quick identification or disambiguation of campaign-specific names.
 - Consult more than one topic file when a subject naturally crosses categories.

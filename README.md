@@ -12,7 +12,7 @@ The campaign encyclopedia is the primary organized reference for both AI agents 
 
 Start here:
 
-[`encyclopedia/TableOfContents.md`](encyclopedia/TableOfContents.md)
+[`encyclopedia/README.md`](encyclopedia/README.md)
 
 Use the Table of Contents to locate only the topic files needed for the current task rather than reading the entire encyclopedia up front.
 

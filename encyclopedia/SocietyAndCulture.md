@@ -1,6 +1,6 @@
 # Society and Culture
 
-[Back to Table of Contents](TableOfContents.md)
+[Back to Table of Contents](README.md)
 
 **Version:** 1.0  
 **Canon through:** August 27, 2026
