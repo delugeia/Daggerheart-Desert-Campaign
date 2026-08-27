@@ -42,6 +42,7 @@ foreach ($documents as $key => $file) {
 }
 
 $titles['README'] = 'Table of Contents';
+$titles['DivinePresence'] = 'Divine Presence';
 
 uksort($titles, static function (string $a, string $b) use ($titles): int {
     $group = static function (string $key): int {
