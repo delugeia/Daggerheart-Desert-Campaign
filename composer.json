@@ -1,0 +1,14 @@
+{
+    "name": "delugeia/daggerheart-desert-campaign",
+    "description": "A lightweight Markdown viewer for the Daggerheart Desert Campaign.",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": "^8.4 || ^8.5",
+        "league/commonmark": "^2.7"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}
