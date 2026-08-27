@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
+use League\CommonMark\Extension\GithubFlavoredMarkdownExtension;
+use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
 use League\CommonMark\MarkdownConverter;
 
 require dirname(__DIR__) . '/vendor/autoload.php';
@@ -44,8 +46,23 @@ uasort($titles, static fn (string $a, string $b): int => strnatcasecmp($a, $b));
 $environment = new Environment([
     'html_input' => 'strip',
     'allow_unsafe_links' => false,
+    'heading_permalink' => [
+        'id_prefix' => '',
+        'fragment_prefix' => '',
+        'apply_id_to_heading' => true,
+        'insert' => 'none',
+    ],
+    'table' => [
+        'wrap' => [
+            'enabled' => true,
+            'tag' => 'div',
+            'attributes' => ['class' => 'table-responsive'],
+        ],
+    ],
 ]);
 $environment->addExtension(new CommonMarkCoreExtension());
+$environment->addExtension(new GithubFlavoredMarkdownExtension());
+$environment->addExtension(new HeadingPermalinkExtension());
 $converter = new MarkdownConverter($environment);
 $markdown = file_get_contents($documents[$current]) ?: '';
 $content = (string) $converter->convert($markdown);
