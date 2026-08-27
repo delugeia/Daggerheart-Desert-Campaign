@@ -56,6 +56,12 @@ These categories have not yet been formally mapped onto every ancestry or legal 
 
 The gods are not remote abstractions. Avatars can walk among people, proclamations can reorganize government, and patron gods shape professional and personal identity.
 
+Sacred images also have practical religious functions. Divine Eyes placed over homes, courts, temples, and public spaces offer gods places through which they may choose to see and hear. Personal holy symbols allow deliberate communication, while maintained idols provide more stable places for communion. None guarantees that a god is attending at a particular moment.
+
+Temple processions are therefore more than pageantry: carrying an idol allows a deity to visit fields, funerals, festivals, or another temple. People who line a procession route may believe the god is literally looking back at them.
+
+Serving as a willing living vessel is an extraordinary act of devotion because divine power can sustain a host through terrible injuries without erasing those injuries. When the god departs, the vessel may collapse, remain gravely wounded, or die.
+
 The great temple of Ra stands physically at Amarna’s center. Public religious doctrine supports social order, but forbidden claims about Amun circulate through survivors, secret worshipers, and groups such as the Stillwater Covenant.
 
 Anubis’s worship reinforces proper burial and the boundary between life and death. Undead can therefore be accepted as state instruments in one context and condemned as sacred violations in another, creating deliberate cultural tension.

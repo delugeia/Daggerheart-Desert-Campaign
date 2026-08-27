@@ -14,6 +14,7 @@
 - [Movement and Grid Play](#movement-and-grid-play)
 - [Damage and Adversary Handling](#damage-and-adversary-handling)
 - [Conditions and Custom Effects](#conditions-and-custom-effects)
+- [Divine Possession](#divine-possession)
 - [Adversary Design](#adversary-design)
 - [Narrative Carryover from D&D](#narrative-carryover-from-dd)
 - [GM Verification Notes](#gm-verification-notes)
@@ -112,6 +113,21 @@ The exact duration was not permanently standardized across the campaign.
 ### Vulnerable, Restrained, Hidden, and Other Conditions
 
 Custom adversaries should use official Daggerheart conditions whenever possible rather than creating near-duplicates. Environmental descriptions can remain vivid while the mechanical effect stays concise.
+
+## Divine Possession
+
+Divine possession is a campaign-specific narrative framework rather than a general official Daggerheart subsystem.
+
+- A deity requires a willing, devout host to establish a living-vessel connection.
+- The host remains conscious even when the deity assumes full control.
+- If the host later tries to expel a deity that refuses to leave, resolve the uncertain struggle with an appropriate **Presence or Instinct Reaction Roll**. Presence suits force of personality or spiritual conviction; Instinct suits self-preservation or an intuitive rejection of the presence.
+- A deity acting through a vessel can manifest supernatural abilities and temporary equipment, but the mortal body limits the power it can channel.
+- Divine vitality may keep a catastrophically injured host active. When possession ends, existing injuries remain and may immediately incapacitate or kill the host.
+- Defeating a possessed champion ordinarily breaks the deity’s material connection rather than killing the deity itself.
+
+The GM should set difficulty and consequences according to the deity, the host’s relationship with it, the degree of surrendered control, and the fictional circumstances. A benevolent patron may leave without requiring a roll.
+
+See [Divine Presence](DivinePresence.md#the-living-vessel) for the full canon.
 
 ## Adversary Design
 

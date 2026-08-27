@@ -22,6 +22,7 @@ This file is the entry point for the encyclopedia. All files use a flat director
 | [NPCs.md](NPCs.md) | Named and recurring non-player characters | Allies, patrons, antagonists, historical figures, unnamed but important roles |
 | [FactionsAndOrganizations.md](FactionsAndOrganizations.md) | Organizations and collective powers | Priesthoods, cults, covert agents, criminal groups, adventuring parties, unresolved organizations |
 | [ReligionAndGods.md](ReligionAndGods.md) | Theology, divine politics, and soul concepts | Ra and Amun; Anubis; character patrons; Vecna; Ma’at and Isfet; Ka, Ba, and Akh |
+| [DivinePresence.md](DivinePresence.md) | How gods perceive, communicate, and manifest materially | Divine Eyes; holy symbols; idols; processions; living vessels; limits and costs of possession |
 | [Geography.md](Geography.md) | Natural regions and large-scale physical features | River valley, Khat’Najat, Pharaoh’s Teeth, Sharian, Treacherous Land, Artery |
 | [Locations.md](Locations.md) | Settlements, ruins, temples, mines, and dungeon areas | Amarna; Bowels of Anubis; ruined city; Catacombs of Ashur-Ka; Cinderquartz mine; old-world sites |
 | [CreaturesAndAdversaries.md](CreaturesAndAdversaries.md) | Monsters, supernatural beings, and custom adversaries | Desert predators, undead, temple guardians, quartz creatures, djinn, vampires, planned threats |

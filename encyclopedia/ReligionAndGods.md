@@ -8,6 +8,7 @@
 ## Outline
 
 - [Religious Worldview](#religious-worldview)
+- [Divine Presence and Material Limits](#divine-presence-and-material-limits)
 - [Ra and Amun](#ra-and-amun)
 - [Anubis](#anubis)
 - [Character Patron Gods](#character-patron-gods)
@@ -25,6 +26,23 @@ Most people recognize many gods while maintaining a particularly close relations
 
 The region’s religious life is defined by a conflict between public doctrine and forbidden truth. The central question is not merely whether the gods exist, but whether they are honest, rightful, or truly divine.
 
+## Divine Presence and Material Limits
+
+The gods are immensely powerful but are not omnipotent, omniscient, or omnipresent. To perceive, communicate with, or act within the material world, a deity requires a point of connection created or maintained by mortals.
+
+Established connections include:
+
+- A sacred symbol incorporated into an **Eye**, through which a god may choose to see and hear.
+- A personal holy symbol, through which deity and follower may deliberately communicate without granting the god unrestricted access to the follower’s mind or senses.
+- An idol or statue, which provides a stable place for observation, prayer, and sustained presence.
+- A willing living vessel, through whom a god may speak, act, manifest equipment, and channel a limited portion of divine power.
+
+These connections provide access, not automatic awareness. A god must direct attention toward a particular Eye, symbol, idol, or vessel and cannot attend every connection perfectly at once. Destroying or obscuring an Eye can therefore blind a god to that location if no other connection is available.
+
+Possession requires a willing, devout host at the moment the connection is established. A host remains conscious beneath the divine presence and may later attempt to force it out. The mortal body limits how much power can be expressed and may collapse or die when the sustaining presence leaves after severe injury.
+
+See [Divine Presence](DivinePresence.md) for the complete framework, including processions, manifested equipment, resistance, and the physical cost of possession.
+
 ## Ra and Amun
 
 ### Amun-Ra / Ra
@@ -38,13 +56,15 @@ Public teaching says:
 - Ra consumed him.
 - The two therefore became Amun-Ra.
 
-Ra’s avatars appear differently to different observers:
+Ra’s manifested presence or avatars appear differently to different observers:
 
 - Most people see an angelic ideal shaped to the viewer.
 - Clanks perceive brilliant light.
 - The damned perceive a fiery demon.
 
 Ra knows the party exists and considers them a possible threat, but he is not omniscient. He cannot automatically locate or continuously observe them, creating a need for the [Sun Dogs](FactionsAndOrganizations.md#sun-dogs).
+
+The precise connection Ra used for each prior appearance has not been established. Do not assume a living vessel, idol, or other specific anchor unless later campaign material identifies one.
 
 ### Amun
 
