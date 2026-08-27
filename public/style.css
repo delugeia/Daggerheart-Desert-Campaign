@@ -67,7 +67,7 @@ body {
 .prose { font-size: 1.05rem; }
 .prose h1, .prose h2, .prose h3 { color: var(--night); line-height: 1.2; }
 .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 { scroll-margin-top: 96px; }
-.prose h1 { margin: 0 0 1.5rem; font-size: clamp(2.2rem, 6vw, 4.2rem); letter-spacing: -.035em; }
+.prose h1 { margin: 0 0 1.5rem; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.025em; }
 .prose h1::after { content: ''; display: block; width: 74px; height: 3px; margin-top: 18px; background: var(--sun); }
 .prose h2 { margin-top: 2.6rem; padding-bottom: .4rem; border-bottom: 1px solid var(--line); font-size: 1.7rem; }
 .prose h3 { margin-top: 2rem; font-size: 1.25rem; }
@@ -91,5 +91,5 @@ body {
     .sidebar { display: none; margin-bottom: 28px; padding: 16px; background: #f2e2c4; border: 0; }
     .sidebar.is-open { display: block; }
     .sidebar nav { position: static; }
-    .prose h1 { font-size: 2.3rem; }
+    .prose h1 { font-size: 2rem; }
 }
