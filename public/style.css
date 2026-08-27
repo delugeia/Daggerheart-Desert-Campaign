@@ -88,7 +88,21 @@ body {
     .masthead { position: sticky; top: 0; z-index: 2; }
     .menu-button { display: block; }
     .shell { display: block; padding-top: 24px; }
-    .sidebar { display: none; margin-bottom: 28px; padding: 16px; background: #f2e2c4; border: 0; }
+    .sidebar {
+        position: fixed;
+        z-index: 1;
+        top: 79px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: none;
+        margin: 0;
+        padding: 22px clamp(18px, 4vw, 52px) 40px;
+        overflow-y: auto;
+        background: #f2e2c4;
+        border: 0;
+        box-shadow: 0 12px 30px rgb(33 27 37 / 24%);
+    }
     .sidebar.is-open { display: block; }
     .sidebar nav { position: static; }
     .prose h1 { font-size: 2rem; }
