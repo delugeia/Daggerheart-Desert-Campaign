@@ -117,6 +117,14 @@ Sylvester’s investigations serve Ma’at when they expose lies, correct false 
 
 The people within Intrepid understand themselves as individual threads woven into one functioning whole. Unity strengthens them without requiring any thread to cease being itself.
 
+### Renenutet
+
+**Patron of Mulch “Fungi.”** Renenutet represents nourishment, harvest, agriculture, sustenance, stewardship, family continuity, and the practical survival of the community.
+
+Mulch’s devotion emphasizes a morally neutral and pragmatic view of nature. Living systems are neither kind nor cruel; they endure when their members take what they need, waste little, preserve what sustains the whole, and leave enough for those who come after. Tradition and ancestry matter because they preserve generations of hard-earned survival knowledge, but they are not immune to change when survival requires adaptation.
+
+For Mulch, conservation is not sentimental reverence for untouched nature. It is the practical duty to protect the systems that allow family, community, and future generations to continue.
+
 ## Ma’at, Isfet, and Nekhar
 
 ### Isfet
