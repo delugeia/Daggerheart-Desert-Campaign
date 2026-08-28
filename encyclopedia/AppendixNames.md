@@ -86,6 +86,7 @@ This appendix includes campaign-specific proper names and named concepts only. I
 - **Priesthood of Ra** — Dominant religious institution, recently removed from the Pharaoh’s authority. See [Factions and Organizations](FactionsAndOrganizations.md).
 - **Qurfa Tree** — Rare valley tree whose bark is required for the ’Iiskir Elixir. See [Artifacts and Important Objects](ArtifactsAndImportantObjects.md).
 - **Ra** — Dominant sun god and public ruler of divine order; common name for Amun-Ra. See [Religion and Gods](ReligionAndGods.md).
+- **Renenutet** — Goddess of nourishment, harvest, agriculture, sustenance, stewardship, family continuity, and pragmatic survival; patron of Mulch “Fungi.” See [Religion and Gods](ReligionAndGods.md).
 - **Rod of Seven Parts** — Completed old-world artifact used in the final attempt to stop Vecna. See [Artifacts and Important Objects](ArtifactsAndImportantObjects.md).
 
 ## S–Z
