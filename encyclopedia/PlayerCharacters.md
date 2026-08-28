@@ -164,6 +164,12 @@ He experiences other people’s nightmares, an ability or burden whose origin an
 
 A group is hunting him in the belief that the fungal symbiosis is a curse. They intend to “liberate” him, whether he accepts that help or not.
 
+### Patron: Renenutet
+
+[Renenutet](ReligionAndGods.md#renenutet) reflects Mulch’s pragmatic view of survival, nourishment, stewardship, harvest, family, tradition, ancestry, and community. His faith treats nature as neither kind nor cruel: living systems endure when their members take what they need, waste little, preserve what sustains the whole, and leave enough for those who come after.
+
+For Mulch, conservation is practical rather than sentimental. The individual matters, but so do family, community, and continuity across generations. Tradition carries the accumulated knowledge of what has allowed people to survive, though it may be changed when survival requires it.
+
 ### Open Character Questions
 
 - Who is pursuing Mulch?
