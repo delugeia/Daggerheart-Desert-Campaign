@@ -20,6 +20,8 @@
 
 ## Current Party
 
+[Browse available Level 3 character sheets (PDFs)](../characters/README.md), including Nakhtresh, who does not yet have an entry in this encyclopedia.
+
 | Character | Player | Ancestry | Class / Subclass | Community | Central Hook |
 |---|---|---|---|---|---|
 | **Altennis** | Zeb | Elf | Rogue / Nightwalker | Not yet established | Former spy tied to the stolen ’Iiskir Elixir recipe |
@@ -69,6 +71,8 @@ Known ingredients from the partial copy are:
 
 ## Sedric Runeborne — Rob
 
+[Level 3 character sheet — uploaded as Cedric (PDF)](../characters/Cedric%203%20-%20Loreborne%20Aetheris%20-%20Bard%20Wordsmith.pdf)
+
 **Aetheris — Bard / Wordsmith — Loreborne**  
 **Official ancestry reference:** Aetheris originates in *Void*, issue 2, rather than the uploaded core ancestry reference.
 
@@ -88,6 +92,8 @@ While studying, Sedric received a vision that particular people working in the m
 - At what point does knowledge become dangerous enough that gods or institutions suppress it?
 
 ## Intrepid — Jason
+
+[Level 3 character sheet (PDF)](../characters/Intrepid%203%20-%20Wanderborne%20Clank%20-%20Guardian%20Stalwart.pdf)
 
 **Clank Vessel — Guardian / Stalwart — Seaborne**  
 **Official ancestry reference:** Clank, *Daggerheart*, Ancestry p. 53.
@@ -127,6 +133,8 @@ The earliest concept described “tiny cadets who stole the Clank.” That versi
 The related early hook about a single society depending upon a failing artifact no longer fits the revised origin. It may be reworked later, but its original explanation is not current canon.
 
 ## Sylvester Dalone — AJ
+
+[Level 3 character sheet (PDF)](../characters/Sylvester%203%20-%20Ridgeborne%20Faun%20-%20Wizard%20War.pdf)
 
 **Male Faun — Wizard / School of War — Ridgeborne**  
 **Official ancestry reference:** Faun, *Daggerheart*, Ancestry p. 58.

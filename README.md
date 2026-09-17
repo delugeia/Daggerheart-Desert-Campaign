@@ -16,6 +16,10 @@ Start here:
 
 Use the Table of Contents to locate only the topic files needed for the current task rather than reading the entire encyclopedia up front.
 
+## Character Sheets
+
+Level 3 character sheet PDFs are stored in [`characters/`](characters/). The website's **Character Sheets** page lists the available PDFs automatically, and the player character entries link to their sheets.
+
 ## Images
 
 Campaign artwork and other visual assets will eventually be stored in the [`images/`](images/) directory.

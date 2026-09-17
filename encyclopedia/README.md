@@ -39,6 +39,8 @@ This file is the entry point for the encyclopedia. All files use a flat director
 
 ### Current Party
 
+[Browse character sheets (PDFs)](../characters/README.md)
+
 - [Altennis](PlayerCharacters.md#altennis--zeb)
 - [Sedric Runeborne](PlayerCharacters.md#sedric-runeborne--rob)
 - [Intrepid](PlayerCharacters.md#intrepid--jason)

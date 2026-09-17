@@ -11,11 +11,35 @@ use League\CommonMark\MarkdownConverter;
 require dirname(__DIR__) . '/vendor/autoload.php';
 
 $root = dirname(__DIR__);
+$characterSheets = [];
+foreach (glob($root . '/characters/*.pdf') ?: [] as $file) {
+    $characterSheets[basename($file)] = $file;
+}
+ksort($characterSheets, SORT_NATURAL | SORT_FLAG_CASE);
+
+if (isset($_GET['sheet'])) {
+    $sheet = is_string($_GET['sheet']) ? $_GET['sheet'] : '';
+    if (!array_key_exists($sheet, $characterSheets)) {
+        http_response_code(404);
+        header('Content-Type: text/plain; charset=utf-8');
+        echo 'Character sheet not found.';
+        exit;
+    }
+
+    header('Content-Type: application/pdf');
+    header("Content-Disposition: inline; filename*=UTF-8''" . rawurlencode($sheet));
+    header('Content-Length: ' . filesize($characterSheets[$sheet]));
+    header('X-Content-Type-Options: nosniff');
+    readfile($characterSheets[$sheet]);
+    exit;
+}
+
 $documents = ['README' => $root . '/README.md'];
 
 foreach (glob($root . '/encyclopedia/*.md') ?: [] as $file) {
     $documents[pathinfo($file, PATHINFO_FILENAME)] = $file;
 }
+$documents['CharacterSheets'] = $root . '/characters/README.md';
 
 $requested = isset($_GET['page']) && is_string($_GET['page']) ? $_GET['page'] : 'README';
 $current = array_key_exists($requested, $documents) ? $requested : 'README';
@@ -81,7 +105,34 @@ $environment->addExtension(new GithubFlavoredMarkdownExtension());
 $environment->addExtension(new HeadingPermalinkExtension());
 $converter = new MarkdownConverter($environment);
 $markdown = file_get_contents($documents[$current]) ?: '';
+if ($current === 'CharacterSheets') {
+    foreach ($characterSheets as $name => $file) {
+        $label = htmlspecialchars(pathinfo($name, PATHINFO_FILENAME), ENT_QUOTES);
+        $label = preg_replace('/([\\\\`*_{}\[\]<>])/', '\\\\$1', $label);
+        $markdown .= "\n- [" . $label . ' (PDF)](/?sheet=' . rawurlencode($name) . ")\n";
+    }
+    if ($characterSheets === []) {
+        $markdown .= "\nNo character sheets have been uploaded yet.\n";
+    }
+}
 $content = (string) $converter->convert($markdown);
+
+$content = preg_replace_callback(
+    '/href="(?:\.\.\/)?characters\/([^"?#]+)\.pdf"/i',
+    static function (array $matches) use ($characterSheets): string {
+        $name = rawurldecode(html_entity_decode($matches[1], ENT_QUOTES)) . '.pdf';
+        return array_key_exists($name, $characterSheets)
+            ? 'href="/?sheet=' . rawurlencode($name) . '"'
+            : $matches[0];
+    },
+    $content
+) ?? $content;
+
+$content = str_replace(
+    ['href="../characters/README.md"', 'href="characters/"'],
+    'href="/?page=CharacterSheets"',
+    $content
+);
 
 $content = preg_replace_callback(
     '/href="(?:\.\.\/)?(?:encyclopedia\/)?([^\/#?]+)\.md(#[^"]*)?"/i',
