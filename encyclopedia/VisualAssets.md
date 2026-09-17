@@ -3,7 +3,7 @@
 [Back to Table of Contents](README.md)
 
 **Version:** 1.0  
-**Canon through:** August 27, 2026
+**Canon through:** September 17, 2026
 
 ## Outline
 
@@ -29,8 +29,12 @@ This is a simple inventory. The encyclopedia does not reproduce or package the i
 | **Altennis portrait** | Full-color character portrait in the established sourcebook style. Some prompt history uses the spelling “Altenis.” |
 | **Sedric Runeborne portrait** | Full-color character portrait emphasizing scholarly, wordsmith, and lore-seeking identity. |
 | **Sylvester Dalone portrait** | Full-color portrait; later revision gives him a more rugged face and a practical steampunk rifle resting against his shoulder. |
-| **Mulch “Fungi” portrait** | Human-first, Fungril-second design with desert-toned fungal features. |
+| **Nakhtresh “Nakht” design reference** | Inspired by the Anubis priest in the previous quest; a Divine Wielder serving Anubis. |
 | **Jengo Dustpaw portrait** | Full-color character portrait created from the dedicated Jengo prompt. |
+
+## Former Party Character Art
+
+- **Mulch “Fungi” portrait:** Human-first, Fungril-second design with desert-toned fungal features. Retained following his death in the last quest.
 
 ## Previous-Life and Transition Material
 

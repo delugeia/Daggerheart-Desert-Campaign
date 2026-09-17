@@ -3,7 +3,7 @@
 [Back to Table of Contents](README.md)
 
 **Version:** 1.0  
-**Canon through:** August 27, 2026
+**Canon through:** September 17, 2026
 
 ## Outline
 
@@ -85,6 +85,8 @@ This proclamation transformed a theological dispute into an open conflict among 
 
 ## Anubis
 
+**Patron of [Nakhtresh “Nakht”](PlayerCharacters.md#nakhtresh-nakht--justin).** Nakhtresh is a Divine Wielder who serves Anubis and joins the party to assist them following Mulch’s death.
+
 Anubis governs the proper ordering of death, mummification, burial, guidance of the dead, judgment, and the boundary between life and death.
 
 His concerns make uncontrolled undead within a temple or catacomb sacred to him more than a physical danger. They are a violation of purpose and cosmic order.
@@ -119,7 +121,7 @@ The people within Intrepid understand themselves as individual threads woven int
 
 ### Renenutet
 
-**Patron of Mulch “Fungi.”** Renenutet represents nourishment, harvest, agriculture, sustenance, stewardship, family continuity, and the practical survival of the community.
+**Patron of the late Mulch “Fungi.”** Renenutet represents nourishment, harvest, agriculture, sustenance, stewardship, family continuity, and the practical survival of the community.
 
 Mulch’s devotion emphasizes a morally neutral and pragmatic view of nature. Living systems are neither kind nor cruel; they endure when their members take what they need, waste little, preserve what sustains the whole, and leave enough for those who come after. Tradition and ancestry matter because they preserve generations of hard-earned survival knowledge, but they are not immune to change when survival requires adaptation.
 

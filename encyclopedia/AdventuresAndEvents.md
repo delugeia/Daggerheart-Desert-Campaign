@@ -3,11 +3,12 @@
 [Back to Table of Contents](README.md)
 
 **Version:** 1.0  
-**Canon through:** August 27, 2026
+**Canon through:** September 17, 2026
 
 ## Outline
 
 - [Status Key](#status-key)
+- [Mulch’s Death and Nakhtresh’s Introduction](#mulchs-death-and-nakhtreshs-introduction)
 - [The Last Secret](#the-last-secret)
 - [A Life Remembered](#a-life-remembered)
 - [Formation at the Mines](#formation-at-the-mines)
@@ -25,6 +26,13 @@
 - **Developed:** Prepared in substantial detail; play status may vary.
 - **Planned:** Intended future direction.
 - **Hook:** Reusable premise not yet committed to the main chronology.
+
+## Mulch’s Death and Nakhtresh’s Introduction
+
+**Update recorded: September 17, 2026.**
+
+- **Occurred:** Mulch died in the last quest. The specific circumstances and quest name are not recorded here.
+- **Planned for the September 17 session:** Justin introduces [Nakhtresh “Nakht”](PlayerCharacters.md#nakhtresh-nakht--justin), a Divine Wielder serving Anubis who decides to join the party to assist them. His design is inspired by the Anubis priest in the previous quest.
 
 ## The Last Secret
 

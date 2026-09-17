@@ -3,7 +3,7 @@
 [Back to Table of Contents](README.md)
 
 **Version:** 1.0  
-**Canon through:** August 27, 2026
+**Canon through:** September 17, 2026
 
 ## Outline
 
@@ -77,6 +77,8 @@
 - Who becomes his recurring arch-enemy?
 
 ### Mulch “Fungi”
+
+**Historical unresolved hooks:** Mulch died in the last quest. These questions remain unresolved; his death does not establish answers or automatically transfer these hooks to Nakhtresh.
 
 - Who is hunting him and why?
 - Is the symbiosis benign, necessary, manipulative, or all three?

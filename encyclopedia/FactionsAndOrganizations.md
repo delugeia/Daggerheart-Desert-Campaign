@@ -3,7 +3,7 @@
 [Back to Table of Contents](README.md)
 
 **Version:** 1.0  
-**Canon through:** August 27, 2026
+**Canon through:** September 17, 2026
 
 ## Outline
 
@@ -103,7 +103,7 @@ An unnamed investigative agency that employed Sylvester, assigned increasingly d
 
 ### Mulch’s Would-Be Liberators
 
-A group hunting Mulch because it believes his ancient fungal symbiosis is a curse. Its members describe their goal as liberation, but they do not appear to respect Mulch’s own understanding or consent.
+A group that hunted Mulch because it believed his ancient fungal symbiosis was a curse. Mulch died in the last quest; the group’s response and subsequent activity are not established. Its members describe their goal as liberation, but they do not appear to respect Mulch’s own understanding or consent.
 
 ## Unresolved or Proposed Factions
 

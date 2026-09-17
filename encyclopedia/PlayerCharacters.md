@@ -3,7 +3,7 @@
 [Back to Table of Contents](README.md)
 
 **Version:** 1.0  
-**Canon through:** August 27, 2026
+**Canon through:** September 17, 2026
 
 ## Outline
 
@@ -13,14 +13,15 @@
 - [Sedric Runeborne](#sedric-runeborne--rob)
 - [Intrepid](#intrepid--jason)
 - [Sylvester Dalone](#sylvester-dalone--aj)
-- [Mulch “Fungi”](#mulch-fungi--justin)
+- [Nakhtresh “Nakht”](#nakhtresh-nakht--justin)
+- [Mulch “Fungi” — deceased](#mulch-fungi--justin)
 - [Jengo Dustpaw](#jengo-dustpaw--noah)
 - [Previous-Life Heroes](#previous-life-heroes)
 - [GM Notes and Revisions](#gm-notes-and-revisions)
 
 ## Current Party
 
-[Browse available Level 3 character sheets (PDFs)](../characters/README.md), including Nakhtresh, who does not yet have an entry in this encyclopedia.
+[Browse available Level 3 character sheets (PDFs)](../characters/README.md).
 
 | Character | Player | Ancestry | Class / Subclass | Community | Central Hook |
 |---|---|---|---|---|---|
@@ -28,12 +29,12 @@
 | **Sedric Runeborne** | Rob | Aetheris | Bard / Wordsmith | Loreborne | Scholar whose vision identified the mine prisoners as people of destiny |
 | **Intrepid** | Jason | Clank vessel | Guardian / Stalwart | Seaborne | Miniaturized abductees operating a rebuilt Clank body |
 | **Sylvester Dalone** | AJ | Faun | Wizard / School of War | Ridgeborne | Detective framed by his own agency |
-| **Mulch “Fungi”** | Justin | Fungril | Druid / Warden not finalized | Orderborne | Symbiotic survivor hunted by would-be “liberators” |
+| **Nakhtresh “Nakht”** | Justin | Firbolg | Seraph / Divine Wielder | Freeborne | Servant of Anubis who joins the party to assist them |
 | **Jengo Dustpaw** | Noah | See entry | See entry | See entry | Sixth current party member with an established visual design |
 
 ## Shared Campaign Connections
 
-The party formed around the mines, though each character arrived through a different combination of punishment, enslavement, prophecy, pursuit, or institutional betrayal. Their stories repeatedly connect to forbidden knowledge, oppressive authority, survival, and truths that established powers would prefer to bury.
+The original party formed around the mines, though each character arrived through a different combination of punishment, enslavement, prophecy, pursuit, or institutional betrayal. Their stories repeatedly connect to forbidden knowledge, oppressive authority, survival, and truths that established powers would prefer to bury.
 
 The characters also exist in a world created after [Vecna’s remaking of reality](HistoryAndCosmology.md#the-ritual-of-remaking). They are not required to be literal reincarnations of the old heroes. They can experience emotional echoes, shared dreams, unexplained recognition, names remembered without context, or other fragments of a previous existence. These memories carry no automatic mechanical benefits.
 
@@ -159,7 +160,27 @@ Sedric and Sylvester overlap as investigators but differ in emphasis:
 - Is the agency connected to the Sun Dogs, a cartel, the priesthood, or another power?
 - Who will emerge as his recurring rival or arch-enemy?
 
+## Nakhtresh “Nakht” — Justin
+
+**Firbolg — Seraph / Divine Wielder — Freeborne**
+
+**Nickname:** Nakht, pronounced like “Knocked.”
+
+**Patron:** [Anubis](ReligionAndGods.md#anubis).
+
+[Level 3 character sheet (PDF)](../characters/Nakhtresh%203%20-%20Freeborne%20Firbolg%20-%20Seraph%20Divine%20Wielder.pdf)
+
+Nakhtresh serves Anubis and decides to join the party to assist them. His introduction is set for the September 17, 2026 session, following Mulch’s death in the previous quest.
+
+His character design is inspired by the Anubis priest in the previous quest. This is a design reference; it does not establish that Nakhtresh is that priest.
+
+### GM Note — Party Succession
+
+Nakhtresh is Justin’s new current character. Mulch died in the last quest and is retained below as a deceased former party member. The specific circumstances of Mulch’s death and the name of that quest have not been recorded here.
+
 ## Mulch “Fungi” — Justin
+
+**Status: Deceased former party member.** Mulch died in the quest preceding Nakhtresh’s September 17, 2026 introduction. The following background and unresolved questions are retained as historical records.
 
 **Male Fungril — Druid / Warden of the Elements or Warden of Renewal — Orderborne**  
 **Official ancestry reference:** Fungril, *Daggerheart*, Ancestry p. 60.
@@ -227,6 +248,8 @@ A male goliath ranger and scout with rogue training. Tallhut was a powerful, phy
 A male elf shadow monk. Temeir relied upon extreme mobility, dim light, stealth, and Shadow Step to move unpredictably around a battlefield.
 
 ## GM Notes and Revisions
+
+- **September 17, 2026:** Nakhtresh “Nakht,” a Divine Wielder serving Anubis, replaces Mulch in the current roster after Mulch’s death.
 
 - Past-life material is emotional and narrative flavor, not a mechanical inheritance system.
 - A Daggerheart character may echo an old hero without being that hero’s literal reincarnation.

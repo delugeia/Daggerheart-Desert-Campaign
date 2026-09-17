@@ -3,7 +3,7 @@
 [Back to Table of Contents](README.md)
 
 **Version:** 1.0  
-**Canon through:** August 27, 2026
+**Canon through:** September 17, 2026
 
 ## Outline
 
@@ -21,7 +21,7 @@
 
 ## System and Party State
 
-The current campaign uses **Daggerheart** rather than D&D 5e. The party was established in early play at approximately **level 2**. Later notes do not definitively record a level increase, so level should be checked against current character sheets before encounter design.
+The current campaign uses **Daggerheart** rather than D&D 5e. The party was established in early play at approximately **level 2**. The September 17, 2026 uploads provide Level 3 sheets for Cedric (listed as Sedric Runeborne in the encyclopedia), Intrepid, Nakhtresh, and Sylvester. Confirm the remaining two characters’ levels before encounter design. See [Character Sheets](../characters/README.md).
 
 The current party contains six PCs:
 
@@ -29,19 +29,20 @@ The current party contains six PCs:
 - Sedric Runeborne.
 - Intrepid.
 - Sylvester Dalone.
-- Mulch “Fungi.”
+- Nakhtresh “Nakht” (replaces the deceased Mulch “Fungi”).
 - Jengo Dustpaw.
 
 ## Official References
 
 The uploaded official Daggerheart PDFs are source references rather than encyclopedia content.
 
-### Current Ancestries
+### Ancestry References
 
 - Clank — *Daggerheart*, Ancestry p. 53.
 - Elf — p. 56.
 - Faun — p. 58.
-- Fungril — p. 60.
+- Fungril — p. 60 (Mulch, deceased former party member).
+- Firbolg — Nakhtresh’s ancestry; see his current character sheet.
 - Katari — p. 67, when applicable to a campaign character.
 - Aetheris — from *Void*, issue 2; not in the uploaded core ancestry excerpt.
 

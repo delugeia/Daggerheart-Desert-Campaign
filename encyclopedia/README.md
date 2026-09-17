@@ -1,7 +1,7 @@
 # Daggerheart Desert Campaign Encyclopedia
 
 **Version:** 1.0  
-**Canon through:** August 27, 2026
+**Canon through:** September 17, 2026
 
 This file is the entry point for the encyclopedia. All files use a flat directory structure and simple relative links.
 
@@ -45,7 +45,7 @@ This file is the entry point for the encyclopedia. All files use a flat director
 - [Sedric Runeborne](PlayerCharacters.md#sedric-runeborne--rob)
 - [Intrepid](PlayerCharacters.md#intrepid--jason)
 - [Sylvester Dalone](PlayerCharacters.md#sylvester-dalone--aj)
-- [Mulch “Fungi”](PlayerCharacters.md#mulch-fungi--justin)
+- [Nakhtresh “Nakht”](PlayerCharacters.md#nakhtresh-nakht--justin)
 - [Jengo Dustpaw](PlayerCharacters.md#jengo-dustpaw--noah)
 
 ### Central Campaign Questions
@@ -63,4 +63,4 @@ This file is the entry point for the encyclopedia. All files use a flat director
 - **Intrepid’s old artifact hook:** The earliest idea that one shared society depended on a failing artifact no longer fits the revised origin and remains unresolved rather than current fact.
 - **Public cosmology:** Early remade-world planning described an openly Vecna-centered society. Later campaign material presents Ra as the dominant public deity. Vecna’s metaphysical authorship remains canon, but the relationship between the two structures is unresolved.
 - **Visual style:** Early epilogue work used black-and-white storyboard art. The later `ART-STYLE.md` establishes full-color cinematic fantasy RPG sourcebook art as the default; storyboard style is now used only when explicitly requested.
-- **Current roster:** The current party contains six characters, including Jengo Dustpaw. The previous-life party remains historical material rather than a mechanical template.
+- **Current roster (September 17, 2026):** The current party contains six characters, including Nakhtresh “Nakht,” Justin’s new character after Mulch’s death in the last quest. Mulch’s entry remains as a historical record. The previous-life party remains historical material rather than a mechanical template.

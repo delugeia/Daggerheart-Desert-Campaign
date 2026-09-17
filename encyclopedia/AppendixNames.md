@@ -3,7 +3,7 @@
 [Back to Table of Contents](README.md)
 
 **Version:** 1.0  
-**Canon through:** August 27, 2026
+**Canon through:** September 17, 2026
 
 ## Outline
 
@@ -71,9 +71,10 @@ This appendix includes campaign-specific proper names and named concepts only. I
 - **Lost Temple of Anubis** — Planned investigation site where previous visitors vanished and undead violate sacred order. See [Locations](Locations.md).
 - **Ma’at** — Goddess and principle of truth, justice, balance, and right order; Sylvester’s patron. See [Religion and Gods](ReligionAndGods.md).
 - **Merik the Unwanted** — Justin’s previous-life aasimar celestial warlock. See [Player Characters](PlayerCharacters.md).
-- **Mulch / Fungi** — Justin’s current Fungril druid, symbiotic survivor, and dream-bearer. See [Player Characters](PlayerCharacters.md).
+- **Mulch / Fungi** — Justin’s deceased former Fungril druid, symbiotic survivor, and dream-bearer; died in the quest before Nakhtresh joined. See [Player Characters](PlayerCharacters.md).
 - **Nabira** — Desert witch associated with King Sabet’s tomb and accompanied by two hounds. See [NPCs](NPCs.md).
 - **Najm Plant** — Valley plant whose irregularly blooming flower is required for the ’Iiskir Elixir. See [Artifacts and Important Objects](ArtifactsAndImportantObjects.md).
+- **Nakhtresh / Nakht** — Justin’s current Freeborne Firbolg Seraph / Divine Wielder serving Anubis; Nakht is pronounced like “Knocked.” Joins to assist the party after Mulch’s death. See [Player Characters](PlayerCharacters.md#nakhtresh-nakht--justin).
 - **Neith** — Goddess of weaving, creation, endurance, and unity; patron of Intrepid. See [Religion and Gods](ReligionAndGods.md).
 - **Nekhar, the First Lich** — Campaign demigod, Exiled Akh, crow figure, and rebel against Ma’at. See [Religion and Gods](ReligionAndGods.md).
 - **Neshet** — Local leader of the Stillwater Covenant and recipient of the Cinderheart Seal. See [NPCs](NPCs.md).
