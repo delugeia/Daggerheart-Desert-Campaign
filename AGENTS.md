@@ -6,6 +6,19 @@ This project contains the **Daggerheart Desert Campaign**, a mythic desert-fanta
 
 Use the project sources to preserve continuity, established lore, tone, and terminology without loading unnecessary material into context.
 
+## Sites, environments, and deployment
+
+| Item | Details |
+|---|---|
+| Local development site | [https://campaign.test/](https://campaign.test/) |
+| Local environment | Herd / Nginx |
+| Production site | [https://campaign.delugeia.com/](https://campaign.delugeia.com/) |
+| Production environment | Forge / Ubuntu / Nginx |
+| GitHub repository | [delugeia/Daggerheart-Desert-Campaign](https://github.com/delugeia/Daggerheart-Desert-Campaign) |
+| GitHub profile | `delugeia` |
+
+Production is deployed automatically through the GitHub→Forge deploy hook. Pushing to the deployment branch triggers a production deployment.
+
 ## Source of Truth
 
 Treat campaign material as canon unless a later conversation or source explicitly overrides it.
@@ -13,7 +26,7 @@ Treat campaign material as canon unless a later conversation or source explicitl
 Use this priority order:
 
 1. **The user's latest explicit decisions or corrections.**
-2. **The current HTML campaign encyclopedia in `content/encyclopedia/`, with its entry point at `content/home.html`,** for current organized canon. Original Markdown files are retained as a historical migration source and are not authoritative for subsequent website edits.
+2. **The current HTML campaign encyclopedia in `content/encyclopedia/`, with its entry point at `content/home.html`,** for current organized canon. Converted Markdown originals have been removed; maintain current content directly in HTML.
 3. **Original project conversations, transcripts, notes, and source documents** when more detail is needed or the encyclopedia is ambiguous.
 4. **Official Daggerheart material** for rules, ancestries, adversaries, and mechanical verification. It is reference material, not campaign lore.
 5. **General knowledge or web research** only when requested or genuinely necessary. Clearly distinguish it from campaign-derived information.
