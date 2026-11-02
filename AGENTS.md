@@ -169,7 +169,7 @@ The main campaign and vampire reference now share one PHP layout, one navigation
 
 - `content/home.html`: encyclopedia table of contents and default Home content.
 - `content/encyclopedia/*.html`: current campaign articles, including `appendix-names.html`.
-- `content/vampires/overview.html`, `gallery.html`, and each `<house>.html`: current vampire content.
+- `content/vampires/index.html`, `gallery.html`, and each `<house>.html`: current vampire content.
 - `content/about.html`, `art-style.html`, and `character-sheets.html`: other reference content. Consult `content/art-style.html` for current visual guidance.
 - `includes/navigation-config.php`: optional navigation order/groups, labels, titles, layout classes, and content filenames for menu entries. It is NOT a routing allowlist. A new valid HTML content file is accessible automatically without an entry; add an entry only when it should appear in navigation or needs presentation metadata.
 - `includes/navigation.php` and `layout.php`: shared sidebar and document structure.
@@ -195,7 +195,7 @@ Vampire prompts and historical session/Markdown material remain in `C:/Users/del
 
 ## URL paths — November 2, 2026
 
-Public page addresses map directly to editable content: `/vampires/vael` → `content/vampires/vael.html`; `/vampires/overview` → `content/vampires/overview.html`; `/vampires/gallery` → `content/vampires/gallery.html`; `/encyclopedia/geography` → `content/encyclopedia/geography.html`. The special default `/` maps to `content/home.html`; `/home` redirects to `/`. Paths have no trailing slash, except `/`. A new HTML file automatically creates its matching URL; navigation metadata is optional and never authorizes file access.
+Public page addresses map directly to editable content: `/vampires/vael` → `content/vampires/vael.html`; `/vampires` → `content/vampires/index.html`; `/vampires/gallery` → `content/vampires/gallery.html`; `/encyclopedia/geography` → `content/encyclopedia/geography.html`. The special default `/` maps to `content/home.html`; `/home` redirects to `/`. Paths have no trailing slash, except `/`. A new HTML file automatically creates its matching URL; navigation metadata is optional and never authorizes file access.
 
 Old query-string page/sheet URLs, standalone HTML URLs, and vampire shell hashes are no longer supported. includes/legacy-urls.php and the public HTML redirect stubs have been removed at the user’s request. Keep current links pointed at clean content paths; do not restore legacy compatibility. Normal canonical redirects for /home and trailing slashes may remain.
 
@@ -205,4 +205,10 @@ Herd already forwards non-file requests to the PHP controller. Production Nginx 
 
 The root characters/ directory was removed after verifying its four PDFs were identical to the served copies. public/characters/ is now the only campaign PDF directory. The empty root images/ directory was removed. The map formerly under assets/maps/ was moved unchanged to public/image/maps/anubis-statue-headless-top-down.png; the emptied assets/ containers were removed. Use /image/maps/... in content URLs.
 
-The redundant standalone content/vampires/sigil-bar.html page and its hidden navigation entry were removed. Maintain the house-panel bar directly in content/vampires/overview.html; there is no separate bar page to synchronize. Do not recreate these removed duplicate files/folders. League CommonMark, vendor/, composer.json, and composer.lock remain in place and unused by the website.
+The redundant standalone content/vampires/sigil-bar.html page and its hidden navigation entry were removed. Maintain the house-panel bar directly in content/vampires/index.html; there is no separate bar page to synchronize. Do not recreate these removed duplicate files/folders. League CommonMark, vendor/, composer.json, and composer.lock remain in place and unused by the website.
+
+## Directory index lookup
+
+Routing checks `content/<path>.html` first, then `content/<path>/index.html`. Thus `/vampires` loads `content/vampires/index.html` without a registered route. The root continues to prefer `content/home.html`, falling back to `content/index.html`. Navigation URLs are derived from content filenames; directory index files link to their parent URL without `/index` or `.html`. Existing canonical trailing-slash redirects apply. Path validation and realpath containment apply to both lookup candidates. Missing pages/directories still return 404.
+
+The vampire overview was renamed from overview.html to index.html. Use `/vampires` for its public URL. Do not recreate the old page or add compatibility redirects.

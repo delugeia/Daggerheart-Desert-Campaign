@@ -142,7 +142,7 @@ return [
     'vampire-houses' => [
         'title' => 'The Vampire Houses',
         'label' => 'Overview',
-        'file' => 'vampires/overview.html',
+        'file' => 'vampires/index.html',
         'group' => 'Vampire houses',
         'class' => 'overview-page',
     ],

@@ -5,7 +5,11 @@ $pages = require dirname(__DIR__) . '/includes/navigation-config.php';
 $basePath = rtrim((string) (getenv('CAMPAIGN_BASE_PATH') ?: ''), '/');
 function e(string $value): string { return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }
 function site_url(string $path): string { global $basePath; return $basePath . '/' . ltrim($path, '/'); }
-function content_url(string $file): string { return $file === 'home.html' ? '/' : '/' . substr($file, 0, -5); }
+function content_url(string $file): string {
+    if ($file === 'home.html' || $file === 'index.html') return '/';
+    if (str_ends_with($file, '/index.html')) return '/' . substr($file, 0, -11);
+    return '/' . substr($file, 0, -5);
+}
 function redirect_page(string $path): never { header('Location: ' . site_url($path), true, 301); exit; }
 function render_content(string $file): void {
     // Content uses site-root URLs. Prefix them for optional subdirectory hosting;
@@ -20,15 +24,30 @@ if ($basePath !== '' && ($path === $basePath || str_starts_with($path, $basePath
 }
 $path = rtrim($path, '/') ?: '/';
 if ($path === '/home') redirect_page('/');
-$relativeFile = $path === '/' ? 'home.html' : ltrim($path, '/') . '.html';
 $contentRoot = realpath(dirname(__DIR__) . '/content');
 $validPath = $path === '/' || preg_match('~^/[A-Za-z0-9_-]+(?:/[A-Za-z0-9_-]+)*$~D', $path);
-$contentFile = $validPath ? realpath($contentRoot . '/' . $relativeFile) : false;
-$notFound = !$contentFile || !str_starts_with($contentFile, $contentRoot . DIRECTORY_SEPARATOR) || !is_file($contentFile);
+$candidates = $path === '/'
+    ? ['home.html', 'index.html']
+    : [ltrim($path, '/') . '.html', ltrim($path, '/') . '/index.html'];
+$relativeFile = '';
+$contentFile = false;
+if ($validPath) {
+    // Prefer a matching page; otherwise use a directory's index.html.
+    foreach ($candidates as $candidate) {
+        $resolved = realpath($contentRoot . '/' . $candidate);
+        if ($resolved && str_starts_with($resolved, $contentRoot . DIRECTORY_SEPARATOR) && is_file($resolved)) {
+            $relativeFile = $candidate;
+            $contentFile = $resolved;
+            break;
+        }
+    }
+}
+$notFound = $contentFile === false;
 if ($notFound) http_response_code(404);
 else {
     $requestPath = (string) parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-    if ($requestPath !== site_url($path)) redirect_page($path);
+    $canonicalPath = content_url($relativeFile);
+    if ($requestPath !== site_url($canonicalPath)) redirect_page($canonicalPath);
 }
 // Navigation metadata is optional. Unlisted content derives its title from H1.
 $page = ['title' => 'Page not found', 'class' => 'encyclopedia-page'];
