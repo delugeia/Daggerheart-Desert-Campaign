@@ -1,202 +1,45 @@
 <?php
-
 declare(strict_types=1);
-
-use League\CommonMark\Environment\Environment;
-use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
-use League\CommonMark\Extension\GithubFlavoredMarkdownExtension;
-use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
-use League\CommonMark\MarkdownConverter;
-
-require dirname(__DIR__) . '/vendor/autoload.php';
-
-$root = dirname(__DIR__);
-$characterSheets = [];
-foreach (glob($root . '/characters/*.pdf') ?: [] as $file) {
-    $characterSheets[basename($file)] = $file;
+$pages = require dirname(__DIR__) . '/includes/navigation-config.php';
+// Leave unset for a domain root; set CAMPAIGN_BASE_PATH=/campaign for a subdirectory.
+$basePath = rtrim((string) (getenv('CAMPAIGN_BASE_PATH') ?: ''), '/');
+function e(string $value): string { return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }
+function site_url(string $path): string { global $basePath; return $basePath . '/' . ltrim($path, '/'); }
+function content_url(string $file): string { return $file === 'home.html' ? '/' : '/' . substr($file, 0, -5); }
+function redirect_page(string $path): never { header('Location: ' . site_url($path), true, 301); exit; }
+function render_content(string $file): void {
+    // Content uses site-root URLs. Prefix them for optional subdirectory hosting;
+    // fragment-only links and external URLs stay unchanged.
+    echo preg_replace_callback('~\b(href|src)="(/(?!/)[^"]*)"~',
+        static fn(array $m): string => $m[1] . '="' . e(site_url(html_entity_decode($m[2], ENT_QUOTES, 'UTF-8'))) . '"',
+        file_get_contents($file));
 }
-ksort($characterSheets, SORT_NATURAL | SORT_FLAG_CASE);
-
-if (isset($_GET['sheet'])) {
-    $sheet = is_string($_GET['sheet']) ? $_GET['sheet'] : '';
-    if (!array_key_exists($sheet, $characterSheets)) {
-        http_response_code(404);
-        header('Content-Type: text/plain; charset=utf-8');
-        echo 'Character sheet not found.';
-        exit;
-    }
-
-    header('Content-Type: application/pdf');
-    header("Content-Disposition: inline; filename*=UTF-8''" . rawurlencode($sheet));
-    header('Content-Length: ' . filesize($characterSheets[$sheet]));
-    header('X-Content-Type-Options: nosniff');
-    readfile($characterSheets[$sheet]);
-    exit;
+$path = rawurldecode((string) parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+if ($basePath !== '' && ($path === $basePath || str_starts_with($path, $basePath . '/'))) {
+    $path = substr($path, strlen($basePath)) ?: '/';
 }
-
-$documents = ['README' => $root . '/README.md'];
-
-foreach (glob($root . '/encyclopedia/*.md') ?: [] as $file) {
-    $documents[pathinfo($file, PATHINFO_FILENAME)] = $file;
+$path = rtrim($path, '/') ?: '/';
+if ($path === '/home') redirect_page('/');
+$relativeFile = $path === '/' ? 'home.html' : ltrim($path, '/') . '.html';
+$contentRoot = realpath(dirname(__DIR__) . '/content');
+$validPath = $path === '/' || preg_match('~^/[A-Za-z0-9_-]+(?:/[A-Za-z0-9_-]+)*$~D', $path);
+$contentFile = $validPath ? realpath($contentRoot . '/' . $relativeFile) : false;
+$notFound = !$contentFile || !str_starts_with($contentFile, $contentRoot . DIRECTORY_SEPARATOR) || !is_file($contentFile);
+if ($notFound) http_response_code(404);
+else {
+    $requestPath = (string) parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    if ($requestPath !== site_url($path)) redirect_page($path);
 }
-$documents['CharacterSheets'] = $root . '/characters/README.md';
-
-$requested = isset($_GET['page']) && is_string($_GET['page']) ? $_GET['page'] : 'README';
-$current = array_key_exists($requested, $documents) ? $requested : 'README';
-$notFound = $requested !== $current;
-
-function documentTitle(string $file): string
-{
-    $markdown = file_get_contents($file) ?: '';
-    if (preg_match('/^#\s+(.+)$/m', $markdown, $matches) === 1) {
-        return trim($matches[1]);
-    }
-
-    return pathinfo($file, PATHINFO_FILENAME);
-}
-
-function pageUrl(string $key): string
-{
-    return $key === 'README' ? '/' : '/?page=' . rawurlencode($key);
-}
-
-$titles = [];
-foreach ($documents as $key => $file) {
-    $titles[$key] = documentTitle($file);
-}
-
-$titles['README'] = 'Table of Contents';
-$titles['DivinePresence'] = 'Divine Presence';
-
-uksort($titles, static function (string $a, string $b) use ($titles): int {
-    $group = static function (string $key): int {
-        if ($key === 'README') {
-            return 0;
-        }
-
-        return str_starts_with(strtolower($key), 'appendix') ? 2 : 1;
-    };
-
-    $groupComparison = $group($a) <=> $group($b);
-    return $groupComparison !== 0
-        ? $groupComparison
-        : strnatcasecmp($titles[$a], $titles[$b]);
-});
-
-$environment = new Environment([
-    'html_input' => 'strip',
-    'allow_unsafe_links' => false,
-    'heading_permalink' => [
-        'id_prefix' => '',
-        'fragment_prefix' => '',
-        'apply_id_to_heading' => true,
-        'insert' => 'none',
-    ],
-    'table' => [
-        'wrap' => [
-            'enabled' => true,
-            'tag' => 'div',
-            'attributes' => ['class' => 'table-responsive'],
-        ],
-    ],
-]);
-$environment->addExtension(new CommonMarkCoreExtension());
-$environment->addExtension(new GithubFlavoredMarkdownExtension());
-$environment->addExtension(new HeadingPermalinkExtension());
-$converter = new MarkdownConverter($environment);
-$markdown = file_get_contents($documents[$current]) ?: '';
-if ($current === 'CharacterSheets') {
-    foreach ($characterSheets as $name => $file) {
-        $label = htmlspecialchars(pathinfo($name, PATHINFO_FILENAME), ENT_QUOTES);
-        $label = preg_replace('/([\\\\`*_{}\[\]<>])/', '\\\\$1', $label);
-        $markdown .= "\n- [" . $label . ' (PDF)](/?sheet=' . rawurlencode($name) . ")\n";
-    }
-    if ($characterSheets === []) {
-        $markdown .= "\nNo character sheets have been uploaded yet.\n";
+// Navigation metadata is optional. Unlisted content derives its title from H1.
+$page = ['title' => 'Page not found', 'class' => 'encyclopedia-page'];
+if (!$notFound) {
+    $markup = file_get_contents($contentFile);
+    $title = preg_match('~<h1\b[^>]*>(.*?)</h1>~s', $markup, $heading)
+        ? html_entity_decode(strip_tags($heading[1]), ENT_QUOTES, 'UTF-8')
+        : ucwords(str_replace(['-', '_'], ' ', basename($path)));
+    $page = ['title' => $title, 'class' => 'encyclopedia-page'];
+    foreach ($pages as $entry) {
+        if ($entry['file'] === $relativeFile) { $page = $entry; break; }
     }
 }
-$content = (string) $converter->convert($markdown);
-
-$content = preg_replace_callback(
-    '/href="(?:\.\.\/)?characters\/([^"?#]+)\.pdf"/i',
-    static function (array $matches) use ($characterSheets): string {
-        $name = rawurldecode(html_entity_decode($matches[1], ENT_QUOTES)) . '.pdf';
-        return array_key_exists($name, $characterSheets)
-            ? 'href="/?sheet=' . rawurlencode($name) . '"'
-            : $matches[0];
-    },
-    $content
-) ?? $content;
-
-$content = str_replace(
-    ['href="../characters/README.md"', 'href="characters/"'],
-    'href="/?page=CharacterSheets"',
-    $content
-);
-
-$content = preg_replace_callback(
-    '/href="(?:\.\.\/)?(?:encyclopedia\/)?([^\/#?]+)\.md(#[^"]*)?"/i',
-    static function (array $matches) use ($documents): string {
-        $key = rawurldecode($matches[1]);
-        if (!array_key_exists($key, $documents)) {
-            return $matches[0];
-        }
-
-        return 'href="' . htmlspecialchars(pageUrl($key) . ($matches[2] ?? ''), ENT_QUOTES) . '"';
-    },
-    $content
-) ?? $content;
-
-$pageTitle = $titles[$current];
-?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Campaign encyclopedia for the Daggerheart Desert Campaign.">
-    <title><?= htmlspecialchars($pageTitle) ?> · Daggerheart Desert Campaign</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-    <header class="masthead">
-        <a class="brand" href="/">
-            <span class="brand-mark" aria-hidden="true">☀</span>
-            <span>
-                <strong>Daggerheart</strong>
-                <small>Desert Campaign</small>
-            </span>
-        </a>
-        <button class="menu-button" type="button" aria-controls="navigation" aria-expanded="false">Contents</button>
-    </header>
-
-    <div class="shell">
-        <aside class="sidebar" id="navigation">
-            <nav aria-label="Campaign encyclopedia">
-                <p class="nav-label">Campaign Archive</p>
-                <?php foreach ($titles as $key => $title): ?>
-                    <a href="<?= htmlspecialchars(pageUrl($key)) ?>"<?= $key === $current ? ' aria-current="page"' : '' ?>>
-                        <?= htmlspecialchars($title) ?>
-                    </a>
-                <?php endforeach; ?>
-            </nav>
-        </aside>
-
-        <main class="content" id="content">
-            <?php if ($notFound): ?>
-                <div class="notice">That chronicle could not be found. The campaign overview is shown instead.</div>
-            <?php endif; ?>
-            <article class="prose"><?= $content ?></article>
-        </main>
-    </div>
-
-    <script>
-        const button = document.querySelector('.menu-button');
-        const navigation = document.querySelector('#navigation');
-        button.addEventListener('click', () => {
-            const open = navigation.classList.toggle('is-open');
-            button.setAttribute('aria-expanded', String(open));
-        });
-    </script>
-</body>
-</html>
+require dirname(__DIR__) . '/includes/layout.php';

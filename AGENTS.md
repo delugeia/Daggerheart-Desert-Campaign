@@ -13,7 +13,7 @@ Treat campaign material as canon unless a later conversation or source explicitl
 Use this priority order:
 
 1. **The user's latest explicit decisions or corrections.**
-2. **The Campaign Encyclopedia files** for current organized canon.
+2. **The current HTML campaign encyclopedia in `content/encyclopedia/`, with its entry point at `content/home.html`,** for current organized canon. Original Markdown files are retained as a historical migration source and are not authoritative for subsequent website edits.
 3. **Original project conversations, transcripts, notes, and source documents** when more detail is needed or the encyclopedia is ambiguous.
 4. **Official Daggerheart material** for rules, ancestries, adversaries, and mechanical verification. It is reference material, not campaign lore.
 5. **General knowledge or web research** only when requested or genuinely necessary. Clearly distinguish it from campaign-derived information.
@@ -28,9 +28,9 @@ Do **not** read or digest the entire encyclopedia at the start of a conversation
 
 Instead:
 
-- Begin with `encyclopedia/README.md` when you need to locate campaign information.
+- Begin with `content/home.html` when you need to locate current campaign information.
 - Open only the topic files relevant to the current task.
-- Use `AppendixNames.md` for quick identification or disambiguation of campaign-specific names.
+- Use `content/encyclopedia/appendix-names.html` for quick identification or disambiguation of campaign-specific names.
 - Consult more than one topic file when a subject naturally crosses categories.
 - Return to original notes or transcripts only when the encyclopedia lacks needed detail or a conflict must be resolved.
 
@@ -147,3 +147,49 @@ Keep responses direct and useful.
 - Ask clarifying questions when answers would materially affect the result, especially before large worldbuilding or artifact-generation tasks.
 - For complex work, organize information with concise headings and bullets.
 - Do not over-explain routine steps.
+
+## Unified website — November 2, 2026
+
+The main campaign and vampire reference now share one PHP layout, one navigation list, and the vampire site's parchment, crimson, and serif presentation. Keep the campaigns' canon distinctions intact; merging presentation does not merge conflicting lore. Read `content/vampires/AGENTS.md` before vampire work.
+
+### Authoritative files
+
+- `content/home.html`: encyclopedia table of contents and default Home content.
+- `content/encyclopedia/*.html`: current campaign articles, including `appendix-names.html`.
+- `content/vampires/overview.html`, `gallery.html`, and each `<house>.html`: current vampire content.
+- `content/about.html`, `art-style.html`, and `character-sheets.html`: other reference content. Consult `content/art-style.html` for current visual guidance.
+- `includes/navigation-config.php`: optional navigation order/groups, labels, titles, layout classes, and content filenames for menu entries. It is NOT a routing allowlist. A new valid HTML content file is accessible automatically without an entry; add an entry only when it should appear in navigation or needs presentation metadata.
+- `includes/navigation.php` and `layout.php`: shared sidebar and document structure.
+- `public/index.php`: the small controller mapping URL paths directly to content/<path>.html, with / mapped to content/home.html. It reads HTML directly; no Markdown parsing or Composer autoloading occurs at runtime. Missing or invalid paths return HTTP 404. Validate path segments and use realpath containment to serve only HTML files inside content/. Never include PHP or resolve files outside that directory.
+- `public/css/styles.css`: the sole shared stylesheet. Reuse existing classes and keep all authored styling here.
+- `public/js/site.js`: the main site's mobile Contents menu. `public/js/lightbox.js`: shared image lightbox, wheel zoom, and panning.
+- `public/image/`: image root, singular. Organize images by subject; vampire assets belong in `public/image/vampire/<house>/`, and maps in `public/image/maps/`. The headless Anubis statue map is `public/image/maps/anubis-statue-headless-top-down.png`. Preserve descriptive filenames and matching prompt basenames.
+- `public/characters/`: directly served character PDFs. Update the PDF and `content/character-sheets.html` when a sheet changes; listing is not generated at request time.
+
+Content pages are editable HTML fragments, NOT complete documents. Keep headings, paragraphs, lists, tables, captions, meaningful section grouping, and useful internal anchors. Do not add doctype, html/head/body, main, repeated global navigation, embedded styles, script includes, or shared document footers to content. The layout provides those once. Content links use site-root URL paths: `/vampires/vael#optional-anchor`, `/encyclopedia/geography`, etc. These map to the matching HTML filenames, not navigation keys. Images use `/image/vampire/<house>/<filename>` and PDFs `/characters/<filename>`. Fragment-only links such as `#vael-members` remain unchanged. The shared site_url() helper prefixes shared assets/navigation and root-relative content attributes with optional CAMPAIGN_BASE_PATH for deployment in a subdirectory; do not add a base tag, which would break fragment-only links. Do not introduce an iframe or a Markdown-to-HTML editing/build requirement.
+
+The shell uses a left sidebar, centered content with a 1200px maximum width, and the former main site's collapsible mobile Contents menu. Preserve vampire house full-width prose, dedicated member image columns, sigil alignment, ordered household captions, gallery thumbnail order and bold heads, and existing lightbox behavior. When changing shared UI, check both encyclopedia and vampire pages and a mobile viewport.
+
+### Historical files
+
+The 20 original Markdown documents converted to HTML were content-verified and removed on November 2, 2026. Current content lives only in content/*.html and its subdirectories. Use content/home.html, content/art-style.html, content/character-sheets.html, and content/encyclopedia/*.html in place of the removed Markdown documents. Do not recreate Markdown duplicates. All AGENTS.md files remain active instructions and are preserved; prompts, session records, and unconverted Markdown are unaffected. League CommonMark stays installed under `vendor/` with composer files unchanged, but is not used by the site.
+
+The former standalone sites and all compatibility redirect files have been removed. The original root vampires/ site and public/vampires junction are retired. Do not recreate duplicate live copies or old URL redirects. Content exists only under content/; public/ contains the PHP controller and browser assets.
+
+All new agent maintenance scripts, migration records, intermediates, and verification reports belong under project-level `work/`. Earlier scripts and the former site wrappers there are historical records, not a build or restore pipeline. Review before reuse. Keep `content/`, `includes/`, `work/`, `_secrets/`, and private support material outside the public document root. Do not publish or deploy externally without a user request.
+
+Vampire prompts and historical session/Markdown material remain in `C:/Users/delug/Documents/ChatGPT/DH Campaign Online/`; consult the vampire instructions for those locations. Do not link to prompt files or Markdown archives from the public website.
+
+## URL paths — November 2, 2026
+
+Public page addresses map directly to editable content: `/vampires/vael` → `content/vampires/vael.html`; `/vampires/overview` → `content/vampires/overview.html`; `/vampires/gallery` → `content/vampires/gallery.html`; `/encyclopedia/geography` → `content/encyclopedia/geography.html`. The special default `/` maps to `content/home.html`; `/home` redirects to `/`. Paths have no trailing slash, except `/`. A new HTML file automatically creates its matching URL; navigation metadata is optional and never authorizes file access.
+
+Old query-string page/sheet URLs, standalone HTML URLs, and vampire shell hashes are no longer supported. includes/legacy-urls.php and the public HTML redirect stubs have been removed at the user’s request. Keep current links pointed at clean content paths; do not restore legacy compatibility. Normal canonical redirects for /home and trailing slashes may remain.
+
+Herd already forwards non-file requests to the PHP controller. Production Nginx must serve from public/ and route missing paths to index.php while serving real assets directly. See `work/path-routing/production-nginx.conf.example` for the location fallback; retain the server's existing PHP-FPM handler. No production server configuration was changed by this local migration. For subdirectory deployment configure CAMPAIGN_BASE_PATH and adapt the Nginx fallback. Keep CommonMark installed but unused; maintain converted campaign content directly as HTML.
+
+## Post-merge cleanup — November 2, 2026
+
+The root characters/ directory was removed after verifying its four PDFs were identical to the served copies. public/characters/ is now the only campaign PDF directory. The empty root images/ directory was removed. The map formerly under assets/maps/ was moved unchanged to public/image/maps/anubis-statue-headless-top-down.png; the emptied assets/ containers were removed. Use /image/maps/... in content URLs.
+
+The redundant standalone content/vampires/sigil-bar.html page and its hidden navigation entry were removed. Maintain the house-panel bar directly in content/vampires/overview.html; there is no separate bar page to synchronize. Do not recreate these removed duplicate files/folders. League CommonMark, vendor/, composer.json, and composer.lock remain in place and unused by the website.
